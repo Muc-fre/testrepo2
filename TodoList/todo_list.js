@@ -33,8 +33,24 @@ function clearCompletedTasks() {
             displayTasks();
         }
 addTaskBtn.addEventListener("click", addTask);
+taskInput.addEventListener("keydown", function(event) {
+    if (event.key === "Enter") {
+        addTask();
+    }
+});
+
 clearCompletedBtn.addEventListener("click", clearCompletedTasks);
 
  displayTasks();
- 
+
+const clearAllBtn = document.getElementById("clearAllBtn");
+
+function clearAllTasks() {
+    tasks = []; // Empty the tasks array
+    displayTasks(); // Refresh the list
+}
+
+clearAllBtn.addEventListener("click", clearAllTasks);
+
+
 
